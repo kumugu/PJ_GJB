@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Platform</title>
+    <link rel="stylesheet" href="/frontend/src/css/style.css">
+</head>
+<body>
+    <header class="hero-header">
+        <!-- 로고와 네비게이션 -->
+        <div class="header-content">
+            <!-- 네비게이션 -->
+            <nav class="nav-links">
+                <a href="#games">Games</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+    
+            <!-- 로고와 이름 -->
+            <div class="logo-title">GameJukeBox</div>
+            
+            <!-- 사용자 액션 -->
+            <div class="user-actions">
+                <button class="login-btn">Login</button>
+                <button class="menu-toggle">☰</button>
+            </div>
+        </div>
+    </header>
+    
+    
+    <section id="games-section" class="games-layout">
+        <!-- 중앙 콘텐츠 -->
+        <div class="main-content">
+            <div class="game-display">
+                <div class="game-play-area">
+                    <div class="ascii-container">
+                        <pre id="ascii-game">
+██████╗   █████╗ ███╗   ███╗███████╗     ██████╗ ██╗   ██╗███████╗ ██████╗  
+██╔════╝ ██╔══██╗████╗ ████║██╔════╝    ██╔═══██╗██║   ██║██╔════╝ ██╔══██╗ 
+██║  ███╗███████║██╔████╔██║█████╗      ██║   ██║██║   ██║█████╗   ██████╔╝ 
+██║   ██║██╔══██║██║╚██╔╝██║██╔══╝      ██║   ██║██║   ██║██╔══╝   ██╔══██╗ 
+╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗    ╚██████╔╝╚██████╔╝███████╗ ██║  ██║ 
+ ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═════╝  ╚═════╝ ╚══════╝ ╚═╝  ╚═╝  
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 좌측 스크롤 슬라이더 -->
+        <button class="toggle-left" id="left-toggle">◀</button>
+        <div class="interactive-slider" id="left-panel">
+            <div class="slider-item"><img src="/frontend/src/images/testImg_1.jpg" alt="testGame1"></div>
+            <div class="slider-item"><img src="/frontend/src/images/testImg_2.jpg" alt="testGame2"></div>
+            <div class="slider-item"><img src="/frontend/src/images/testImg_3.jpg" alt="testGame3"></div>
+            <div class="slider-item"><img src="/frontend/src/images/testImg_4.jpg" alt="testGame4"></div>
+            <div class="slider-item"><img src="/frontend/src/images/testImg_5.jpg" alt="testGame5"></div>
+            <div class="slider-item"><img src="/frontend/src/images/testImg_6.jpg" alt="testGame6"></div>
+        </div>
+    
+          
+    
+        <!-- 우측 채팅 -->
+        <button class="toggle-right" id="right-toggle">▶</button>
+        <div class="right-content" id="right-panel">
+            <div class="chat-window">
+                <ul>
+                    <li>User1: Hello!</li>
+                    <li>User2: Hi there!</li>
+                    <li>User1: Ready to play?!</li>
+                </ul>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type a message..." />
+                <button>Send</button>
+            </div>
+        </div>
+    </section>
+
+
+
+    
+    <!-- 푸터 -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-logo">🎮 GameJukeBox</div>
+            <div class="footer-links">
+                <a href="#terms">Terms of Service</a>
+                <a href="#privacy">Privacy Policy</a>
+            </div>
+            <div class="copyright">© 2024 GameJukeBox. All rights reserved.</div>
+        </div>
+    </footer>
+
+
+    <script src="/frontend/src/js/main_anima.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,523 @@
+/* 기본 스타일 */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* 화면 전체 높이 */
+    width: 100vw; /* 화면 전체 너비 */
+    background-color: black; /* 검정 배경 */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* 스크롤 방지 */
+    color: white; /* 텍스트 색상 */
+}
+
+
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav-links {
+        margin-top: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+}
+
+
+/* 전체 헤더 스타일 */
+.hero-header {
+    background: #000000; /* 검정 배경 */
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid #39ff14; /* 네온 그린 테두리 */
+    color: white;
+    text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14; /* 네온 효과 */
+    font-family: "Courier New", Courier, monospace; /* 고정폭 폰트 */
+}
+
+/* 헤더 콘텐츠 레이아웃 */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* 네비게이션 */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #39ff14;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffff33; /* 옐로우 */
+    text-shadow: 0 0 5px #ffff33, 0 0 10px #ffff33; /* 네온 옐로우 효과 */
+}
+
+/* 로고와 타이틀 */
+.logo-title {
+    font-size: 48px; /* 텍스트 크기 확대 */
+    font-weight: bold; /* 텍스트 굵게 */
+    color: #39ff14; /* 네온 그린 색상 */
+    text-shadow: 
+        0 0 10px #39ff14, 
+        0 0 20px #39ff14, 
+        0 0 30px #39ff14; /* 네온 효과 */
+    font-family: "Courier New", Courier, monospace; /* 고정폭 폰트 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    letter-spacing: 2px; /* 글자 간격 */
+    position: absolute; /* 절대 위치 설정 */
+    top: 5%; /* 세로 중앙 */
+    left: 50%; /* 가로 중앙 */
+    transform: translate(-50%, -50%); /* 정중앙에 위치하도록 변환 */
+    z-index: 2; /* 다른 콘텐츠 위에 표시 */
+    transition: transform 0.3s ease, text-shadow 0.3s ease; /* 부드러운 애니메이션 */
+}
+
+.logo-title:hover {
+    transform: translate(-50%, -50%) scale(1.1); /* 마우스 호버 시 확대 */
+    text-shadow: 
+        0 0 20px #39ff14, 
+        0 0 40px #ffff33, 
+        0 0 60px #39ff14; /* 강조된 네온 효과 */
+}
+
+
+
+/* 사용자 액션 */
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.login-btn {
+    padding: 5px 15px;
+    background-color: transparent;
+    color: #39ff14;
+    border: 2px solid #39ff14;
+    border-radius: 5px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #39ff14;
+    color: black;
+    text-shadow: none;
+}
+
+.menu-toggle {
+    font-size: 24px;
+    color: #39ff14;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+    transform: rotate(90deg);
+    color: #ffff33; /* 네온 옐로우 */
+}
+
+
+
+
+
+
+/* 전체 레이아웃 */
+.games-layout {
+    display: flex;
+    height: 100vh;
+    background-color: #000000; /* 검정 배경 */
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* 좌측 슬라이더 */
+.interactive-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #1b1b1b; /* 다크 그레이 배경 */
+    border-right: 2px solid #39ff14; /* 네온 그린 테두리 */
+    box-shadow: inset 0 0 10px #39ff14; /* 안쪽 네온 효과 */
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* 숨김 상태 */
+.interactive-slider.hidden {
+    transform: translateX(-100%);
+}
+
+.interactive-slider .toggle-left.collapsed {
+    right: -40px;
+    transform: rotate(180deg);
+}
+
+.slider-item {
+    position: relative;
+    width: 100%;
+    height: 90px;
+    margin-bottom: 15px; /* 배너 간 간격 */
+    border: 2px solid #39ff14; /* 네온 테두리 */
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #000000; /* 검정 배경 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.5); /* 부드러운 네온 효과 */
+}
+
+/* 배너 호버 효과 */
+.slider-item:hover {
+    transform: scale(1.05); /* 확대 효과 */
+    box-shadow: 0 0 20px #39ff14, 0 0 40px #39ff14; /* 강조된 네온 효과 */
+}
+
+.slider-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(1.2) brightness(1.1); /* 레트로 느낌 강화 */
+}
+
+
+/* 좌측 토글 버튼 */
+.toggle-left {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    color: #39ff14; /* 네온 그린 */
+    border: 2px solid #39ff14;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: block; /* 버튼이 화면에 표시되도록 */
+    visibility: visible; /* 버튼이 보이도록 */
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14; /* 네온 효과 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000; /* 다른 요소보다 위에 표시 */
+}
+
+/* 토글 버튼 호버 효과 */
+.toggle-left:hover {
+    transform: scale(1.1) translateY(-50%);
+    box-shadow: 0 0 20px #39ff14, 0 0 40px #39ff14; /* 강조된 네온 효과 */
+}
+
+/* 깜박이는 효과 */
+@keyframes neonFlicker {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 25px #6d14b6, 0 0 50px #df2b70;
+    }
+}
+
+/* 배너 깜박임 적용 */
+.slider-item {
+    animation: neonFlicker 1.5s infinite ease-in-out;
+}
+
+
+
+/* 중앙 콘텐츠 */
+.main-content {
+    width: 100%; /* 화면 전체 너비 */
+    height: 100%; /* 화면 전체 높이 */
+    background-color: rgba(0, 0, 0, 0.9); /* 더 짙은 반투명 검정 */
+    background-image: 
+        linear-gradient(0deg, #333 1px, transparent 1px),
+        linear-gradient(90deg, #333 1px, transparent 1px); /* Grid 배경 */
+    background-size: 20px 20px; /* Grid 간격 */
+    background-repeat: repeat; /* 배경 반복 */
+    border: 2px solid #39ff14; /* 네온 그린 테두리 */
+    border-radius: 10px; /* 둥근 테두리 */
+    color: #ffffff; /* 텍스트 색상 */
+    padding: 20px;
+    margin: 0; /* 마진 제거 */
+    display: flex;
+    flex-direction: column; /* 콘텐츠 수직 정렬 */
+    justify-content: center; /* 수직 방향 가운데 정렬 */
+    align-items: center; /* 가로 방향 가운데 정렬 */
+    position: relative; /* 부모 요소 중심 기준 */
+    z-index: 0; /* 다른 요소 위에 표시 */
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.5); /* 네온 효과 */
+}
+
+/* GAME DISPLAY */
+.game-display {
+    display: flex; /* flexbox 사용 */
+    flex-direction: column; /* 내부 요소 수직 정렬 */
+    justify-content: center; /* 수직 중앙 정렬 */
+    align-items: center; /* 가로 중앙 정렬 */
+    width: 100%; /* 부모 요소 너비 */
+    height: 100%; /* 부모 요소 높이 */
+    position: relative;
+}
+
+/* GAME PLAY 영역 */
+.game-play-area {
+    width: 100%; /* 부모 너비에 맞춤 */
+    height: 80%; /* 부모 높이에 맞춤 */
+    background-color: rgba(0, 0, 0, 0.7); /* 반투명 검정 */
+    display: flex; /* flexbox 사용 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    border: 2px dashed #39ff14; /* 네온 그린 테두리 */
+    border-radius: 10px; /* 둥근 테두리 */
+    z-index: 1;
+    position: relative; /* 부모 요소 기준 위치 */
+    margin: auto; /* 중앙 정렬 */
+}
+
+/* ASCII 컨테이너 */
+.ascii-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #39ff14; /* 네온 그린 */
+    font-family: "Courier New", Courier, monospace;
+    font-size: 16px; /* 글자 크기 */
+    line-height: 1.2;
+    z-index: 1; /* 콘텐츠 위에 표시 */
+    animation: flicker 2s infinite ease-in-out; /* 깜박이는 효과 */
+    width: auto; /* 콘텐츠에 맞춤 */
+    height: auto; /* 콘텐츠에 맞춤 */
+    margin: auto; /* 중앙 정렬 */
+}
+
+.ascii-container pre {
+    margin: 0; /* 불필요한 여백 제거 */
+    opacity: 1; /* 항상 보이게 */
+    text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14; /* 네온 효과 */
+}
+
+/* 깜박이는 애니메이션 */
+@keyframes flicker {
+    0%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14;
+    }
+    50% {
+        opacity: 0.5;
+        text-shadow: 0 0 2px #39ff14, 0 0 5px #39ff14;
+    }
+}
+
+
+
+/* 우측 채팅 */
+.right-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15%; /* 약간 더 넓게 설정 */
+    height: 100%; /* 화면 전체 높이 */
+    display: flex;
+    flex-direction: column;
+    background-color: #1b1b1b; /* 다크 그레이 배경 */
+    border-left: 2px solid #39ff14; /* 네온 그린 테두리 */
+    box-shadow: inset 0 0 10px #39ff14; /* 안쪽 네온 효과 */
+    transition: transform 0.3s ease; /* 부드러운 이동 애니메이션 */
+}
+
+.right-content.hidden {
+    transform: translateX(100%); /* 화면 밖으로 이동 */
+}
+/* 우측 토글 버튼 */
+.toggle-right {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    color: #39ff14; /* 네온 그린 */
+    border: 2px solid #39ff14; /* 네온 테두리 */
+    border-radius: 50%;
+    font-size: 20px;
+    display: block; /* 버튼이 화면에 표시되도록 */
+    visibility: visible; /* 버튼이 보이도록 */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14; /* 네온 효과 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000; /* 다른 요소보다 위에 표시 */
+}
+
+.toggle-right:hover {
+    transform: scale(1.1) translateY(-50%);
+    box-shadow: 0 0 20px #39ff14, 0 0 40px #39ff14; /* 강조된 네온 효과 */
+}
+
+
+/* 채팅 창 및 입력 */
+.chat-window {
+    flex: 1; /* 남은 공간 채우기 */
+    padding: 10px;
+    overflow-y: auto; /* 스크롤 가능 */
+    background-color: #000000; /* 검정 배경 */
+    color: #ffffff;
+    box-shadow: inset 0 0 10px #39ff14; /* 내부 네온 효과 */
+    font-family: "Courier New", Courier, monospace; /* 픽셀 느낌 폰트 */
+}
+
+.chat-window ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.chat-window li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background: linear-gradient(135deg, #39ff14, #32cd32); /* 네온 그린 그라디언트 */
+    border-radius: 5px;
+    color: black;
+    font-size: 14px;
+    text-shadow: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14; /* 네온 효과 */
+}
+
+.chat-window li:hover {
+    transform: scale(1.05); /* 강조 효과 */
+    box-shadow: 0 0 15px #39ff14, 0 0 30px #39ff14; /* 더 강한 네온 효과 */
+}
+
+
+.chat-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #1b1b1b; /* 다크 그레이 */
+    border-top: 2px solid #39ff14; /* 네온 그린 구분선 */
+    padding: 10px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #39ff14; /* 네온 그린 테두리 */
+    background-color: black; /* 검정 배경 */
+    color: #39ff14;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chat-input input:focus {
+    border-color: #ffff33; /* 네온 옐로우 */
+    box-shadow: 0 0 10px #ffff33, 0 0 20px #ffff33; /* 강조 효과 */
+}
+
+.chat-input button {
+    padding: 10px 15px;
+    background-color: #39ff14; /* 네온 그린 */
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-family: "Courier New", Courier, monospace;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chat-input button:hover {
+    background-color: #ffff33; /* 네온 옐로우 */
+    box-shadow: 0 0 10px #ffff33, 0 0 20px #ffff33; /* 강조 효과 */
+}
+
+
+
+
+/* 푸터 스타일 */
+.site-footer {
+    background-color: #000000; /* 검정 배경 */
+    color: white;
+    height: auto; /* 콘텐츠에 맞게 자동 조정 */
+    padding: 10px; /* 여백 최소화 */
+    text-align: center;
+    border-top: 2px solid #39ff14; /* 네온 그린 테두리 */
+    font-family: "Courier New", Courier, monospace;
+    box-shadow: 0 -5px 10px rgba(57, 255, 20, 0.5); /* 위쪽 네온 효과 */
+    display: flex; /* 플렉스 레이아웃으로 배치 최적화 */
+    flex-direction: column; /* 세로 정렬 */
+    gap: 5px; /* 항목 간격 최소화 */
+}
+
+/* 푸터 로고 */
+.footer-logo {
+    font-size: 16px; /* 텍스트 크기 축소 */
+    color: #39ff14;
+    text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14; /* 네온 효과 */
+}
+
+/* 푸터 링크 */
+.footer-links, .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* 항목 간격 최소화 */
+    font-size: 12px; /* 텍스트 크기 축소 */
+}
+
+.footer-links a, .social-links a {
+    color: #39ff14;
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.footer-links a:hover, .social-links a:hover {
+    color: #ffff33; /* 네온 옐로우 */
+    text-shadow: 0 0 5px #ffff33, 0 0 10px #ffff33; /* 네온 효과 */
+}
+
+/* 저작권 */
+.copyright {
+    font-size: 10px; /* 텍스트 크기 축소 */
+    color: #888888; /* 더 은은한 텍스트 */
+}
+
